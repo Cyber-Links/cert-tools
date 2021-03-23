@@ -40,7 +40,6 @@ def urljoin_wrapper(part1, part2):
 
 def encode(num, alphabet=BASE62):
     """Encode a positive number in Base X
-
     Arguments:
     - `num`: The number to encode
     - `alphabet`: The alphabet to use for encoding
@@ -57,5 +56,5 @@ def encode(num, alphabet=BASE62):
 
 
 def create_iso8601_tz():
-    ret = datetime.now(timezone.utc)
+    ret = datetime.now(timezone.utc).isoformat()[:-13]+'Z'
     return ret.isoformat()
